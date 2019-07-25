@@ -19,4 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/products', 'ProductController');
+// rotte admin
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
+  Route::resource('/products', 'ProductController');
+});

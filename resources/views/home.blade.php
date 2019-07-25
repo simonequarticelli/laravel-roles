@@ -14,12 +14,6 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    <br>
-
-                    {{-- @php
-                      dd(Auth::user()->hasRole('admin'))
-                    @endphp --}}
 
                     @if (Auth::user()->hasRole('admin'))
                       ciao amministratore
@@ -29,10 +23,10 @@
                         non sei ne amministratore ne cliente
                     @endif
 
-                    @php
+                    {{-- @php
                       dd(Auth::user()->can('edit'));
                       dd(Auth::user()->can('show'));
-                    @endphp
+                    @endphp --}}
 
                     @if (Auth::user()->can('edit'))
                       puoi modificare
